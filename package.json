@@ -4,6 +4,10 @@
   "description": "Adds a run to cursor icon to the debug toolbar",
   "publisher": "elazarcoh",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elazarcoh/vscode-run-to-cursor-icon"
+  },
   "engines": {
     "vscode": "^1.72.0"
   },
