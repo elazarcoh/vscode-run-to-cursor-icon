@@ -1,0 +1,58 @@
+{
+  "name": "run-to-cursor-icon",
+  "displayName": "Run to Cursor Icon",
+  "description": "Adds a run to cursor icon to the debug toolbar",
+  "publisher": "elazarcoh",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onDebug"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "run-to-cursor-icon.run-to-cursor",
+        "title": "Run to Cursor",
+        "icon": "resources/run-to-cursor.svg",
+        "enablement": "debugState == 'stopped'"
+      }
+    ],
+    "menus": {
+      "debug/toolBar": [
+        {
+          "command": "run-to-cursor-icon.run-to-cursor",
+          "group": "navigation@15"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.72.0",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.8.4",
+    "ts-loader": "^9.4.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
